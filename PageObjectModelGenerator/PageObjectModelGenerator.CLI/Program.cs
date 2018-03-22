@@ -1,4 +1,5 @@
 ﻿using PageObjectModelGenerator.CLI.Utils;
+using PageObjectModelGenerator.UIAutomationFramework;
 using System;
 using System.Collections.Generic;
 
@@ -14,6 +15,7 @@ namespace PageObjectModelGenerator.CLI
         static void Main(string[] args)
         {
             attributes = new ConsoleAttributeParser().ParseArgs(args);
+            new Class1().GetAllControls(attributes["-p"]);
             Console.ReadLine();
         }      
     }
