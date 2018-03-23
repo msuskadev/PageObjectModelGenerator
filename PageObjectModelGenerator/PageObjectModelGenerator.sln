@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObjectModelGenerator.CL
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2B709981-E3DD-4B25-9638-038B4DE6C3B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObjectModelGenerator.UIAutomationFramework", "PageObjectModelGenerator.UIAutomationFramework\PageObjectModelGenerator.UIAutomationFramework.csproj", "{9D18620B-C1C7-4B94-B456-60CACD0A190D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObjectModelGenerator.Engine", "PageObjectModelGenerator.UIAutomationFramework\PageObjectModelGenerator.Engine.csproj", "{9D18620B-C1C7-4B94-B456-60CACD0A190D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
