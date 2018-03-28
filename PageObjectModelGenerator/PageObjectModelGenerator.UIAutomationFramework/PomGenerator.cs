@@ -1,4 +1,5 @@
 ﻿using PageObjectModelGenerator.UIAutomationFramework.Models;
+using PageObjectModelGenerator.UIAutomationFramework.PageObjectModelTemplate;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,6 +24,12 @@ namespace PageObjectModelGenerator.Engine
             this.PrintChildrenTree();
             
             return null;
+        }
+
+        public string GeneratePom(string pomName)
+        {
+            PageObjectModelTemplate page = new PageObjectModelTemplate(pomName, this.allControls);
+            return page.TransformText();
         }
 
         private AutomationElement GetApplicationMainWindow(string processName)

@@ -1,0 +1,5 @@
+﻿{
+  "GetControlByAutomationId": "base.GetControlById<{0}>(\"{1}\", {2})",
+  "GetControlByName": "base.GetControlByName<{0}>(\"{1}\", {2})",
+  "GetControlByControlType": "base.GetControlByControlType<{0}>(\"{1}\", {2})"
+}
