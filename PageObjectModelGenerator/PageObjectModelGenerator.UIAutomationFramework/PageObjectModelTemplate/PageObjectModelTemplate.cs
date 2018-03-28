@@ -1,15 +1,27 @@
-﻿using PageObjectModelGenerator.UIAutomationFramework.Models;
+﻿using Newtonsoft.Json;
+using PageObjectModelGenerator.UIAutomationFramework.Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PageObjectModelGenerator.UIAutomationFramework.PageObjectModelTemplate
 {
+    /* 
+     * todo 
+
+     * * snippets - every control in partial class 
+     * * different type of methods like getControlByTypeName
+     *  * if there's not possible to create methods - wrte a commetn
+     *  * get only partycilar POM and all controils under
+     */
+
     public partial class PageObjectModelTemplate
     {
+        private Dictionary<string, string> controlFindingMethods;
         internal string className;
         internal List<UIControl> allPomControls = new List<UIControl>();
         internal Dictionary<int, string> allPomControlsNamesDict;
@@ -19,6 +31,7 @@ namespace PageObjectModelGenerator.UIAutomationFramework.PageObjectModelTemplate
             this.className = className;
             this.allPomControls = controls;
             this.allPomControlsNamesDict = this.GenerateControlNames();
+            this.controlFindingMethods = this.GetControlFindingMethods();
         }
 
         internal string GetFindingMethod(UIControl control)
@@ -26,7 +39,12 @@ namespace PageObjectModelGenerator.UIAutomationFramework.PageObjectModelTemplate
             string parent = control.ParentId != 0 ? this.allPomControlsNamesDict[control.ParentId] : "null";
             if (!string.IsNullOrEmpty(control.AutomationId))
             {
-                return $"base.GetControlById(\"{ control.AutomationId }\", {parent})";
+                return string.Format(this.controlFindingMethods["GetControlByAutomationId"], control.ControlType, control.AutomationId, parent);
+            }
+
+            if (!string.IsNullOrEmpty(control.Name))
+            {
+                return string.Format(this.controlFindingMethods["GetControlByName"], control.ControlType, control.Name, parent);
             }
 
             return "TODO";
@@ -64,9 +82,21 @@ namespace PageObjectModelGenerator.UIAutomationFramework.PageObjectModelTemplate
             return controlType;
         }
 
-        public string GetCamelCaseName(string name)
+        private string GetCamelCaseName(string name)
         {
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(name).Replace(" ", "");
+        }
+
+        private Dictionary<string, string> GetControlFindingMethods()
+        {
+            var result = new Dictionary<string, string>();
+            using (StreamReader sr = new StreamReader(@"PageObjectModelTemplate\Config\methods.json"))
+            {
+                var methods = sr.ReadToEnd();
+                result = JsonConvert.DeserializeObject<Dictionary<string, string>>(methods);
+            }
+
+            return result;
         }
     }
 }

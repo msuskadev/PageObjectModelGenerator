@@ -4,25 +4,26 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="PageObjectModelGenerator.UIAutomationFramework.Models" #>
+
+<#@ include file="Snippets\\TextBox\\TextBoxProperties.t4" once="true" #>
+
 public partial class <#= className #> : BasePageObjectModel
 {
-// Create Name
-// GetByName or ID if not found - add to comments
 	#region Finding Controls 
-<# foreach (UIControl control in allPomControls) 
+<# foreach (UIControl control in allPomControls.Where(c => c.ControlType != "ControlType.Button"))
 {#>
-	protected <#= control.ControlType #> <#= GetControlName(control.Id) #>
+	protected <#= control.ControlType #> <#= this.allPomControlsNamesDict[control.Id] #>
 	{
 		get 
 		{
 			return <#= GetFindingMethod(control) #>;
 		}
 	}
-<#}#>
-	#endregion
+
+<#}#>	
+	#endregion	
+	<# foreach (UIControl textBox in allPomControls.Where(c => c.ControlType == "ControlType.Text"))
+{#>
+	<# GenerateTextBoxProperties(this.allPomControlsNamesDict[textBox.Id]); #>
+<#}#>	
 }
-<#+  
-	private string GetControlName(int controlId)  
-    {  
-		return this.allPomControlsNamesDict[controlId];
-    }#>

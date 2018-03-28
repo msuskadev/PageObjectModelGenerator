@@ -1,0 +1,12 @@
+﻿<#+void GenerateTextBoxProperties(string textBoxName)
+{#>
+public string <#= textBoxName #>Value 
+{
+	get { return <#= textBoxName #>.Value; }
+	set 
+	{
+		<#= textBoxName #>.Value = value;
+	}
+}
+<#+
+} #>

@@ -7,21 +7,17 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace PageObjectModelGenerator.UIAutomationFramework.PageObjectModelTemplate
+namespace PageObjectModelGenerator.UIAutomationFramework.PageObjectModelTemplate.Snippets.TextBox
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using PageObjectModelGenerator.UIAutomationFramework.Models;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\PageObjectModelTemplate.tt"
+    #line 1 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\TextBox\TextBoxProperties.t4"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class PageObjectModelTemplate : PageObjectModelTemplateBase
+    public partial class TextBoxProperties : TextBoxPropertiesBase
     {
 #line hidden
         /// <summary>
@@ -29,132 +25,66 @@ namespace PageObjectModelGenerator.UIAutomationFramework.PageObjectModelTemplate
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\n");
-            this.Write("\r\npublic partial class ");
-            
-            #line 10 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\PageObjectModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(className));
-            
-            #line default
-            #line hidden
-            this.Write(" : BasePageObjectModel\r\n{\r\n\t#region Finding Controls \r\n");
-            
-            #line 13 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\PageObjectModelTemplate.tt"
- foreach (UIControl control in allPomControls.Where(c => c.ControlType != "ControlType.Button"))
-{
-            
-            #line default
-            #line hidden
-            this.Write("\tprotected ");
-            
-            #line 15 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\PageObjectModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(control.ControlType));
-            
-            #line default
-            #line hidden
-            this.Write(" ");
-            
-            #line 15 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\PageObjectModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.allPomControlsNamesDict[control.Id]));
-            
-            #line default
-            #line hidden
-            this.Write("\r\n\t{\r\n\t\tget \r\n\t\t{\r\n\t\t\treturn ");
-            
-            #line 19 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\PageObjectModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetFindingMethod(control)));
-            
-            #line default
-            #line hidden
-            this.Write(";\r\n\t\t}\r\n\t}\r\n\r\n");
-            
-            #line 23 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\PageObjectModelTemplate.tt"
-}
-            
-            #line default
-            #line hidden
-            this.Write("\t\r\n\t#endregion\t\r\n\t");
-            
-            #line 25 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\PageObjectModelTemplate.tt"
- foreach (UIControl textBox in allPomControls.Where(c => c.ControlType == "ControlType.Text"))
-{
-            
-            #line default
-            #line hidden
-            this.Write("\t");
-            
-            #line 27 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\PageObjectModelTemplate.tt"
- GenerateTextBoxProperties(this.allPomControlsNamesDict[textBox.Id]); 
-            
-            #line default
-            #line hidden
-            
-            #line 28 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\PageObjectModelTemplate.tt"
-}
-            
-            #line default
-            #line hidden
-            this.Write("\t\r\n}");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\\TextBox\\TextBoxProperties.t4"
+        #line 1 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\TextBox\TextBoxProperties.t4"
 void GenerateTextBoxProperties(string textBoxName)
 {
         
         #line default
         #line hidden
         
-        #line 2 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\\TextBox\\TextBoxProperties.t4"
+        #line 2 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\TextBox\TextBoxProperties.t4"
 this.Write("public string ");
 
         
         #line default
         #line hidden
         
-        #line 3 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\\TextBox\\TextBoxProperties.t4"
+        #line 3 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\TextBox\TextBoxProperties.t4"
 this.Write(this.ToStringHelper.ToStringWithCulture(textBoxName));
 
         
         #line default
         #line hidden
         
-        #line 3 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\\TextBox\\TextBoxProperties.t4"
+        #line 3 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\TextBox\TextBoxProperties.t4"
 this.Write("Value \r\n{\r\n\tget { return ");
 
         
         #line default
         #line hidden
         
-        #line 5 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\\TextBox\\TextBoxProperties.t4"
+        #line 5 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\TextBox\TextBoxProperties.t4"
 this.Write(this.ToStringHelper.ToStringWithCulture(textBoxName));
 
         
         #line default
         #line hidden
         
-        #line 5 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\\TextBox\\TextBoxProperties.t4"
+        #line 5 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\TextBox\TextBoxProperties.t4"
 this.Write(".Value; }\r\n\tset \r\n\t{\r\n\t\t");
 
         
         #line default
         #line hidden
         
-        #line 8 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\\TextBox\\TextBoxProperties.t4"
+        #line 8 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\TextBox\TextBoxProperties.t4"
 this.Write(this.ToStringHelper.ToStringWithCulture(textBoxName));
 
         
         #line default
         #line hidden
         
-        #line 8 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\\TextBox\\TextBoxProperties.t4"
+        #line 8 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\TextBox\TextBoxProperties.t4"
 this.Write(".Value = value;\r\n\t}\r\n}\r\n");
 
         
         #line default
         #line hidden
         
-        #line 11 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\\TextBox\\TextBoxProperties.t4"
+        #line 11 "c:\work\github\pageobjectmodelgenerator\PageObjectModelGenerator\PageObjectModelGenerator.UIAutomationFramework\PageObjectModelTemplate\Snippets\TextBox\TextBoxProperties.t4"
 
 } 
         
@@ -169,7 +99,7 @@ this.Write(".Value = value;\r\n\t}\r\n}\r\n");
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class PageObjectModelTemplateBase
+    public class TextBoxPropertiesBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;
